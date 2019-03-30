@@ -1,14 +1,15 @@
 $(function() {
-    $('.thumbnails').on('click','img',function(event){
-        // capture the click on the img and id the image
-        // let selectedImage = event.target;
-        // select the div to hold and copy the img to .hero class
-        $('.hero img').remove();
-        $(event.target).clone().appendTo( '.hero' );
-    })
-  }
-);
 
+    $('.thumbnail').on('click', function(event) {
+      const imgClicked = $(this).find('img').attr('src');
+      const imgClickedAlt = $(this).find('img').attr('alt');
 
+      $('.hero img').attr('src', imgClicked).attr('alt', imgClickedAlt);
+    });
+  });
 
+/*
+- when user clicks thumbnail of cat (any of the cat thumbnails)
+- copy / put image and alt text of clicked cat to top (hero)
+*/
 
